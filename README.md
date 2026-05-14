@@ -1,5 +1,4 @@
 Salon Management System
-
 Overview
 This project is a desktop salon management system built in Python. It provides a complete solution to manage daily salon operations including bookings, clients, staff, inventory, sales, and financial tracking. The application uses a graphical user interface (GUI) and integrates with a Microsoft Access database for data storage.
 
