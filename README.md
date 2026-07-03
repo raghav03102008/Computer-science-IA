@@ -1,18 +1,18 @@
 # Salon Management System
 
-## Overview
+A desktop app for managing a salon's day-to-day stuff, bookings, clients, staff, inventory, sales, the works. Built in Python with a GUI, backed by a Microsoft Access database.
 
-This project is a desktop salon management system built in Python. It provides a complete solution to manage daily salon operations including bookings, clients, staff, inventory, sales, and financial tracking. The application uses a graphical user interface (GUI) and integrates with a Microsoft Access database for data storage.
+Made for Stardance Hack Club.
 
 ---
 
-## ⚠️ Setup Instructions (Read Before Running)
+## ⚠️ Before You Run It
 
-> **Follow these steps exactly. The application will not run without the database file.**
+The app **will not open** unless you do these in order.
 
-### Step 1 — Place both files in the same folder
+### 1. Keep both files together
 
-Put the executable and the database file **in the same folder** on your computer. For example:
+Put the .exe and the .accdb file in the same folder:
 
 ```
 C:\SalonApp\
@@ -20,96 +20,82 @@ C:\SalonApp\
     Barber appointment system.accdb
 ```
 
-Both files must be in the same directory. If they are separated, the app will prompt you to locate the database manually (see Step 3).
+If they're not in the same folder, the app will ask you to find the database manually, see step 3.
 
-### Step 2 — Install the Microsoft Access Database Engine
+### 2. Install the Access Database Engine
 
-The app requires the Microsoft Access ODBC driver to read the `.accdb` database file.
+You need this even if you already have Microsoft Office. Without it, the app can't talk to the .accdb file.
 
-1. Go to: https://www.microsoft.com/en-us/download/details.aspx?id=54920
-2. Download and install the **Microsoft Access Database Engine 2016 Redistributable**
-3. Restart your computer after installation
+1. Download it here: https://www.microsoft.com/en-us/download/details.aspx?id=54920
+2. Install the **Microsoft Access Database Engine 2016 Redistributable**
+3. Restart your PC after installing
 
-> **This step is required even if you have Microsoft Office installed.** Skip it and the app will fail to open the database.
+### 3. Launch it
 
-### Step 3 — Run the application
+Double-click `SalonManagementSystem.exe`.
 
-Double-click **`SalonManagementSystem.exe`** to launch the app.
+- Found the database automatically? Great, it just opens.
+- Didn't find it? A file picker pops up, just browse to the .accdb file and select it.
 
-- If the database is found automatically (same folder as the exe), the app opens normally.
-- **If the database is not found**, a file picker will appear asking you to locate the `.accdb` file. Navigate to where you saved it, select it, and click Open. The app will then connect and launch.
+### 4. Switching databases later
 
-### Step 4 — Changing the database at runtime
-
-If you ever need to switch to a different database file while the app is running, use the **"🗄 Change Database"** button at the bottom of the left sidebar. This lets you browse for and connect to a different `.accdb` file without restarting the app.
+There's a **"🗄 Change Database"** button at the bottom of the sidebar if you ever need to point the app at a different .accdb file without restarting.
 
 ---
 
-## Features
+## What It Actually Does
 
-The system includes a **dashboard** that displays key business metrics such as total clients, bookings for the day, and revenue figures, along with charts for 7-day revenue trends, booking status distribution, and service popularity.
+**Dashboard**, total clients, today's bookings, revenue, plus charts for the last 7 days of revenue, booking status breakdown, and which services are most popular.
 
-The **booking system** allows users to create, edit, and cancel appointments. It prevents double-booking of hairdressers and tracks client, service, date, and time slot.
+**Bookings**, create, edit, cancel appointments. Won't let you double-book a hairdresser.
 
-**Client management** allows adding, editing, and deleting client records. Each client can store a name, email, phone number, and profile picture. A detailed overview shows visit history and total spending.
+**Clients**, add, edit, delete records, store name, email, phone, profile pic. You can pull up a client and see their whole visit history and how much they've spent.
 
-**Hairdresser management** stores employee details such as name, experience, notes, and profile images.
+**Hairdressers**, track staff details, experience, notes, photos.
 
-The **product and inventory system** allows adding and editing products, tracking stock levels, and performing bulk updates. Stock is automatically updated when sales are made.
+**Inventory**, add, edit products, track stock, bulk updates. Stock drops automatically when something's sold.
 
-The **orders system** records transactions, links them to clients, calculates totals, and updates inventory.
+**Orders**, records the transaction, links it to the client, totals it up, updates stock.
 
-The **financial system** tracks revenue and expenses, calculates profit, shows monthly profit and loss, categorizes expenses, and allows exporting reports to Excel.
-
----
-
-## Technologies Used
-
-- **Python** — core language
-- **CustomTkinter / Tkinter** — graphical user interface
-- **Pillow** — image processing
-- **PyODBC** — database connectivity
-- **Matplotlib** — charts and graphs
-- **OpenPyXL** — Excel export
-- **Microsoft Access (.accdb)** — database
+**Finances**, revenue vs expenses, profit, monthly P&L, expense categories, and you can export everything to Excel.
 
 ---
 
-## Important Requirements
+## Built With
 
-- Windows only — the app depends on the Microsoft Access ODBC driver, which is Windows-exclusive.
-- The `.accdb` database file must be present. If it is not in the same folder as the exe, the app will prompt you to locate it on first launch.
+- Python
+- CustomTkinter / Tkinter for the UI
+- Pillow for images
+- PyODBC for the database connection
+- Matplotlib for the charts
+- OpenPyXL for Excel exports
+- Microsoft Access (.accdb) as the database
 
 ---
 
-## Project Structure
+## Heads Up
+
+- **Windows only**, the Access ODBC driver just doesn't exist for Mac/Linux.
+- No login system yet, anyone with the app can access everything.
+- Local only, not web-based.
+
+---
+
+## Project Files
 
 ```
-SalonManagementSystem.exe       ← Main application
-Barber appointment system.accdb ← Database (must be in same folder)
-Icons/                          ← Application icons (bundled inside exe)
-dashboardtesting.py             ← Source code
+SalonManagementSystem.exe       ← the app
+Barber appointment system.accdb ← the database (needs to sit next to the exe)
+Icons/                          ← bundled inside the exe
+dashboardtesting.py             ← source code
 ```
 
 ---
 
-## How It Works
+## What's Next
 
-The program connects to the Access database using PyODBC. SQL queries retrieve, insert, and update records. The GUI updates dynamically based on database contents. Charts are generated with Matplotlib, and financial reports are exported using OpenPyXL.
-
----
-
-## Limitations
-
-- Windows only due to the Microsoft Access ODBC dependency.
-- No user authentication system.
-- Not web-based; requires local installation.
-
----
-
-## Future Improvements
-
-- Migrate to a more scalable database (MySQL, SQL Server)
-- Add user authentication and role-based access
-- Build a cloud-based or web version
-- Make the application cross-platform
+If I keep building this out:
+- Swap Access for something more scalable, like MySQL
+- Add proper logins and permissions
+- Maybe a web version eventually
+- Get it working cross-platform
