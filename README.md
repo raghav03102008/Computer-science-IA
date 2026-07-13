@@ -1,101 +1,54 @@
-# Salon Management System
+This project contains 9 tabs
 
-A desktop app for managing a salon's day-to-day stuff, bookings, clients, staff, inventory, sales, the works. Built in Python with a GUI, backed by a Microsoft Access database.
+Dashboard
+Here you can see KPI statistics and bookings history.
 
-Made for Stardance Hack Club.
+<img width="1645" height="955" alt="image" src="https://github.com/user-attachments/assets/0806e30f-d371-4248-bd51-4445e854b5ad" />
 
----
+Hairdressers
+This page allows you to append, edit or delete hairdresser details in two distinct modes.
 
-## ⚠️ Before You Run It
+<img width="1677" height="859" alt="image" src="https://github.com/user-attachments/assets/9a3e8647-0fd4-4a2f-94a5-7ebd56f3a5bd" />
 
-The app **will not open** unless you do these in order.
 
-### 1. Keep both files together
+Clients
+This page is a repila of the hairdressers page but for clients with an additional function of a client overview function.
 
-Put the .exe and the .accdb file in the same folder:
+<img width="1671" height="963" alt="image" src="https://github.com/user-attachments/assets/bd6435ce-1ad0-4e9f-bc78-373c20ddac45" />
 
-```
-C:\SalonApp\
-    SalonManagementSystem.exe
-    Barber appointment system.accdb
-```
 
-If they're not in the same folder, the app will ask you to find the database manually, see step 3.
+Products
+This page allows you to store product details
 
-### 2. Install the Access Database Engine
+<img width="1660" height="920" alt="image" src="https://github.com/user-attachments/assets/0b40a7f1-c6eb-4ea1-9ce2-abc535968a79" />
 
-You need this even if you already have Microsoft Office. Without it, the app can't talk to the .accdb file.
 
-1. Download it here: https://www.microsoft.com/en-us/download/details.aspx?id=54920
-2. Install the **Microsoft Access Database Engine 2016 Redistributable**
-3. Restart your PC after installing
+Services
+This page allows you to manipulate the different services offered by the hair salon
 
-### 3. Launch it
+<img width="1674" height="951" alt="image" src="https://github.com/user-attachments/assets/8b158581-52ef-4e19-8254-62771bf2b66b" />
 
-Double-click `SalonManagementSystem.exe`.
+Schedule page
+This page allows the hairdressers to view their own schedule in a well structured manner wihtout needing to worry about the schedules of other hairdressers.
 
-- Found the database automatically? Great, it just opens.
-- Didn't find it? A file picker pops up, just browse to the .accdb file and select it.
+<img width="1646" height="735" alt="image" src="https://github.com/user-attachments/assets/a7716ac9-571a-45e1-a224-d0d6db07f090" />
 
-### 4. Switching databases later
 
-There's a **"🗄 Change Database"** button at the bottom of the sidebar if you ever need to point the app at a different .accdb file without restarting.
+Orders page
+This page lets the hair salon manage their inventory
 
----
+<img width="1657" height="853" alt="image" src="https://github.com/user-attachments/assets/ba925365-36f0-4e43-b9c0-80ad69ed30a7" />
 
-## What It Actually Does
 
-**Dashboard**, total clients, today's bookings, revenue, plus charts for the last 7 days of revenue, booking status breakdown, and which services are most popular.
 
-**Bookings**, create, edit, cancel appointments. Won't let you double-book a hairdresser.
+Financials
+This page offers financial statistics 
 
-**Clients**, add, edit, delete records, store name, email, phone, profile pic. You can pull up a client and see their whole visit history and how much they've spent.
+<img width="1657" height="977" alt="image" src="https://github.com/user-attachments/assets/c4b4974a-5f16-4a09-843a-979342649e05" />
 
-**Hairdressers**, track staff details, experience, notes, photos.
 
-**Inventory**, add, edit products, track stock, bulk updates. Stock drops automatically when something's sold.
 
-**Orders**, records the transaction, links it to the client, totals it up, updates stock.
+Reports
+This page offers smart statistics about the hair salon.
 
-**Finances**, revenue vs expenses, profit, monthly P&L, expense categories, and you can export everything to Excel.
-
----
-
-## Built With
-
-- Python
-- CustomTkinter / Tkinter for the UI
-- Pillow for images
-- PyODBC for the database connection
-- Matplotlib for the charts
-- OpenPyXL for Excel exports
-- Microsoft Access (.accdb) as the database
-
----
-
-## Heads Up
-
-- **Windows only**, the Access ODBC driver just doesn't exist for Mac/Linux.
-- No login system yet, anyone with the app can access everything.
-- Local only, not web-based.
-
----
-
-## Project Files
-
-```
-SalonManagementSystem.exe       ← the app
-Barber appointment system.accdb ← the database (needs to sit next to the exe)
-Icons/                          ← bundled inside the exe
-dashboardtesting.py             ← source code
-```
-
----
-
-## What's Next
-
-If I keep building this out:
-- Swap Access for something more scalable, like MySQL
-- Add proper logins and permissions
-- Maybe a web version eventually
-- Get it working cross-platform
+<img width="1684" height="923" alt="image" src="https://github.com/user-attachments/assets/21d3a410-4ca5-42c9-b03c-dc49457ee174" />
